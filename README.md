@@ -9,6 +9,16 @@ a planilha teste presente neste repositório com o nome _customers.xlsx_ possui 
 
 Caso queira testar para outros formatos, sugiro dar uma lida na documentação do _Apache POI_.
 
+## Tecnologias Utilizadas
+
+
+- [Kotlin](https://kotlinlang.org/)
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Spring Data JPA](https://spring.io/projects/spring-data-jpa)
+- [MySQL](https://www.mysql.com/) 
+- [Apache POI](https://poi.apache.org/)
+
+
 ## Licença
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
@@ -21,7 +31,7 @@ Para iniciar, primeiro faça um clone do repositório utilizando o comando abaix
   git clone https://github.com/franciscofeo/Excel2DB.git
 ```
 
-Após isso, vá para a pasta raiz do repositório e agora você tem duas opções, iniciar a aplicação Spring com o Maven caso você já possua instalado na sua máquina, ou iniciar sem o Maven.
+Após isso, vá para a pasta raiz do repositório e agora você pode iniciar a aplicação, lembre-se somente de ter o banco de dados MySQL instalado na sua máquina.
 
 Se já possuir o gradle instalado, utilize o seguinte comando:
 
@@ -32,7 +42,8 @@ Se já possuir o gradle instalado, utilize o seguinte comando:
 Caso contrário, você pode iniciar a partir da sua IDE de preferência.
 
 
-Após esses comandos e aguardar alguns segundos, a aplicação estará funcionando.
+Após esses comandos e aguardar alguns segundos, a aplicação estará funcionando. Dessa forma, basta ver que foi criado um novo schema chamado _db_excelapi_ e uma tabela _customers_ no seu banco de dados MySQL.
+
 ## FAQ
 
 #### Posso utilizar livremente a API?
