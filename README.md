@@ -50,20 +50,20 @@ Após esses comandos e aguardar alguns segundos, a aplicação estará funcionan
 
 Criei algumas rotas para serem utilizados os métodos HTTP. Utilize **Postman** ou **Insomnia** para a manipulação das requisições.
 
-##### - Rota raiz /customers
+#### - Rota raiz /customers
 São permitidos os métodos GET e POST, para a listagem e cadastro de novos clientes, respectivamente.
 
-##### - Rota /customers/update/{id}
+#### - Rota /customers/update/{id}
 É permitido apenas o método PUT para a atualização do cliente.
 
-##### - Rota /customers/delete/{id}
+#### - Rota /customers/delete/{id}
 É permitido apenas o método DELETE para a deleção do cliente.
 
-##### - Rota /customers/{filename}
+#### - Rota /customers/{filename}
 É permitido apenas o método POST para o início da carga do arquivo Excel para o Banco de Dados, atente-se ao fato de que é necessário
 escrever o arquivo junto com sua extensão, por exemplo: _customers.xlsx_.
 
-##### - Rota /customers/upload
+#### - Rota /customers/upload
 É permitido apenas o método POST onde vai ser feito o carregamento do arquivo, utilize um dos programas citados acima para realizar essa
 operação.
 
