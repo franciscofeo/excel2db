@@ -13,10 +13,8 @@ interface FileStorageRepository {
 
     fun save(file: MultipartFile)
 
-    fun load(filename: String): Resource
-
     fun deleteAll()
 
-    fun loadAll(): Stream<Path>
+
 
 }

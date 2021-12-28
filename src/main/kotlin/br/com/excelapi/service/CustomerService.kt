@@ -21,7 +21,7 @@ class CustomerService (val customerRepository: CustomerRepository) {
 
     fun excelToCustomer(filename: String) {
 
-        val inputStream = FileInputStream("./$filename")
+        val inputStream = FileInputStream("./uploads/$filename")
         val excelFile = WorkbookFactory.create(inputStream)
         val excelSheet = excelFile.getSheetAt(0)
 
@@ -32,9 +32,10 @@ class CustomerService (val customerRepository: CustomerRepository) {
             val it = excelSheet.getRow(rowNumb)
             val name: String = it.getCell(1).stringCellValue
             val email: String = it.getCell(2).stringCellValue
-            println("name: $name | email: $email")
+            val salary: Double = it.getCell(3).numericCellValue
+            println("name: $name | email: $email | salary: $salary")
             rowNumb += 1
-            createCustomer(CustomerDTO(name, email).dtoToCustomer())
+            createCustomer(CustomerDTO(name, email, salary).dtoToCustomer())
         }
 
     }
@@ -43,7 +44,7 @@ class CustomerService (val customerRepository: CustomerRepository) {
         if(!customerRepository.existsById(id)){
             throw RuntimeException("Customer not exists!")
         }
-        val customer: Customer = Customer(id, customerDTO.name, customerDTO.email)
+        val customer = Customer(id, customerDTO.name, customerDTO.email, customerDTO.salary)
         customerRepository.save(customer)
 
     }

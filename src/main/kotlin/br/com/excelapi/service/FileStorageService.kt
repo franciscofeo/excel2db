@@ -33,34 +33,10 @@ class FileStorageService : FileStorageRepository {
         }
     }
 
-    override fun load(filename: String): Resource {
-        try {
-
-            val file: Path = root.resolve(filename)
-            val resource: Resource = UrlResource(file.toUri())
-
-            if(resource.exists() || resource.isReadable){
-                return resource
-            } else{
-                throw RuntimeException("Could not read the file.")
-            }
-
-        } catch (e: Exception){
-            throw Exception("Could not load the file. Error: ${e.message}")
-        }
-    }
-
     override fun deleteAll() {
         FileSystemUtils.deleteRecursively(root.toFile())
     }
 
-    override fun loadAll(): Stream<Path> {
-        try {
-            return Files.walk(root, 1).filter{p -> !p.equals(root)}.map(root::relativize)
-        } catch (e: Exception){
-            throw RuntimeException("Could not load all the files. Error: ${e.message}")
-        }
-    }
 
 
 }

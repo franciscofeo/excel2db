@@ -11,5 +11,6 @@ data class Customer(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null,
     var name: String,
-    var email: String
+    var email: String,
+    var salary: Double
 )
